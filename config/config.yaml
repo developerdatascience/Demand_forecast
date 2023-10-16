@@ -1,0 +1,17 @@
+artifact_roots: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/developerdatascience/Data_Repository/raw/main/Demand_Inventory.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/demand_inventory.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
+
+
+
+
