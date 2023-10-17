@@ -1,2 +1,10 @@
 
-data: file
+COLUMNS:
+  Date: object
+  Product_ID: object
+  Demand: int64
+  Inventory: int64
+
+
+TARGET_COLUMN:
+  name: Demand
