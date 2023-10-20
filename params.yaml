@@ -1,1 +1,11 @@
-data: file
+Forecast:
+  order: (1, 1, 1)
+  seasonal_order: (1, 1, 1, 2)
+  days_in_future: 10
+
+Inventory:
+  initial_inventory: 5500
+  lead_time: 1
+  service_level: 0.95
+  holding_cost: 0.1
+  stockout_cost: 10

@@ -2,7 +2,8 @@ from Demand_Forecast.constants import *
 from Demand_Forecast.utils.common import read_yaml, create_directories
 from Demand_Forecast.entity.config_entity import (DataIngestionConfig,
                                                   DataValidationConfig,
-                                                  DataTransformationConfig)
+                                                  DataTransformationConfig,
+                                                  ModelTrainerConfig)
 
 
 
@@ -49,4 +50,27 @@ class ConfigurationManager:
         return DataTransformationConfig(
             root_dir= config.root_dir,
             data_path = config.data_path
+        )
+    
+    def get_model_trainer(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        schema = self.schema.TARGET_COLUMN
+        params = self.params.Inventory
+        fcst_parms = self.params.Forecast
+
+        create_directories([config.root_dir])
+        return ModelTrainerConfig(
+            root_dir= config.root_dir,
+            train_data_path= config.train_data_path,
+            test_data_path= config.test_data_path,
+            model_name= config.model_name,
+            order= fcst_parms.order,
+            seasonal_order= fcst_parms.seasonal_order,
+            days_in_future = fcst_parms.days_in_future,
+            initial_inventory= params.initial_inventory,
+            lead_time= params.lead_time,
+            service_level= params.service_level,
+            holding_cost= params.holding_cost,
+            stockout_cost= params.stockout_cost,
+            target_column= schema.name
         )
