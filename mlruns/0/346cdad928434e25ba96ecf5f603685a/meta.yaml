@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/harendrakumar/Documents/Demand_forecast/mlruns/0/346cdad928434e25ba96ecf5f603685a/artifacts
+end_time: 1697889844812
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 346cdad928434e25ba96ecf5f603685a
+run_name: likeable-hare-948
+run_uuid: 346cdad928434e25ba96ecf5f603685a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697889843523
+status: 3
+tags: []
+user_id: harendrakumar
