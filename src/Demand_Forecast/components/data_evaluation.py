@@ -30,7 +30,7 @@ class ModelEvaluation:
         df = df['Demand']
         return df
     
-    def log_into_mlflow(self):
+    def log_into_mlflow(self):  # sourcery skip: extract-method
         test = self.load_data(df=pd.read_csv(self.config.test_data_path))
         train = self.load_data(df=pd.read_csv(self.config.train_data_path))
         model = joblib.load(self.config.model_path)
@@ -56,9 +56,6 @@ class ModelEvaluation:
             mlflow.log_metric("mae", mae)
 
             if tracking_url_type_store != "file":
-                mlflow.sklearn.log_model(model, "model", registered_model_name="SARIMAX")
+                mlflow.sklearn.log_model(model, "model", registered_model_name="Time Series-SARIMAX")
             else:
                 mlflow.sklearn.log_model(model, "model")
-
-
-
