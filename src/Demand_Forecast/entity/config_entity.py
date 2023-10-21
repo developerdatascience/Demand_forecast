@@ -37,3 +37,15 @@ class ModelTrainerConfig:
     holding_cost: float
     stockout_cost: int
     target_column: str
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    train_data_path: Path
+    model_path: Path
+    all_params: dict
+    all_inventory_params: dict
+    metric_file_name: Path
+    target_column: str
+    mlflow_uri: str

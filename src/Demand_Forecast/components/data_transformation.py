@@ -43,8 +43,10 @@ class DataTransformation:
     def train_test_split(self) -> None:
         data = pd.read_csv(self.config.data_path)
         data = self.convert_dtypes(data=data, column_name='Date', new_dtypes='datetime')
-
-        train, test = train_test_split(data)
+        data = data[['Date', 'Product_ID', 'Demand', 'Inventory']]
+        # data = data.set_index('Date')
+        # data.sort_index(ascending=True, inplace=True)
+        train, test = train_test_split(data, shuffle=False)
         train.to_csv(os.path.join(self.config.root_dir, "train.csv"), index=False)
         test.to_csv(os.path.join(self.config.root_dir, "test.csv"), index=False)
 

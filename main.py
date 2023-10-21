@@ -3,6 +3,7 @@ from Demand_Forecast.pipeline.stage_01_data_ingestion import DataIngestionPipeli
 from Demand_Forecast.pipeline.stage_02_data_validation import DataValidationPipeline
 from Demand_Forecast.pipeline.stage_03_data_transformation import DataTransformationPipeline
 from Demand_Forecast.pipeline.stage_04_model_trainer import ModelTrainerPipeline
+from Demand_Forecast.pipeline.stage_05_data_evaluation import ModelEvaluationPipeline
 
 
 STAGE_NAME = "Data Ingestion Stage"
@@ -43,10 +44,23 @@ except Exception as e:
 STAGE_NAME = "Model Trainer Stage"
 
 try:
-    logger.info(">>>>>>>>>>>>>Data Transformation begins<<<<<<<<<<<<<")
+    logger.info(">>>>>>>>>>>>>Model Trainer begins<<<<<<<<<<<<<")
     obj = ModelTrainerPipeline()
     obj.main()
-    logger.info(">>>>>>>>>>>>>Data Transformation completed<<<<<<<<<<<<<")
+    logger.info(">>>>>>>>>>>>>Model Trainer completed<<<<<<<<<<<<<")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
+STAGE_NAME = "Data Evaluation Stage"
+
+
+try:
+    logger.info(">>>>>>>>>>>>>Model Evaluation begins<<<<<<<<<<<<<")
+    obj = ModelEvaluationPipeline()
+    obj.main()
+    logger.info(">>>>>>>>>>>>>Model Evaluation completed<<<<<<<<<<<<<")
 except Exception as e:
     logger.exception(e)
     raise e

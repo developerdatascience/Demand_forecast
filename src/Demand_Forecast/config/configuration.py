@@ -3,7 +3,8 @@ from Demand_Forecast.utils.common import read_yaml, create_directories
 from Demand_Forecast.entity.config_entity import (DataIngestionConfig,
                                                   DataValidationConfig,
                                                   DataTransformationConfig,
-                                                  ModelTrainerConfig)
+                                                  ModelTrainerConfig,
+                                                  ModelEvaluationConfig)
 
 
 
@@ -73,4 +74,24 @@ class ConfigurationManager:
             holding_cost= params.holding_cost,
             stockout_cost= params.stockout_cost,
             target_column= schema.name
+        )
+    
+    def get_model_evaluation_config(self) ->ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        fcst_params = self.params.Forecast
+        inventory_params = self.params.Inventory
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        return ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            train_data_path= config.train_data_path,
+            model_path= config.model_path,
+            all_params= fcst_params,
+            all_inventory_params=inventory_params,
+            metric_file_name= config.metric_file_name,
+            target_column= schema.name,
+            mlflow_uri= "https://dagshub.com/developerdatascience/Demand_forecast.mlflow"
         )

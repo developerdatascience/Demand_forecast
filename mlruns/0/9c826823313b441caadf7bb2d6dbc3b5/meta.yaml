@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/harendrakumar/Documents/Demand_forecast/mlruns/0/9c826823313b441caadf7bb2d6dbc3b5/artifacts
+end_time: 1697886062434
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9c826823313b441caadf7bb2d6dbc3b5
+run_name: treasured-snail-58
+run_uuid: 9c826823313b441caadf7bb2d6dbc3b5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697886061135
+status: 3
+tags: []
+user_id: harendrakumar
