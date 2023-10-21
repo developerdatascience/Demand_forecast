@@ -44,7 +44,7 @@ class ModelEvaluationConfig:
     test_data_path: Path
     train_data_path: Path
     model_path: Path
-    all_params: dict
+    fcst_params: dict
     all_inventory_params: dict
     metric_file_name: Path
     target_column: str

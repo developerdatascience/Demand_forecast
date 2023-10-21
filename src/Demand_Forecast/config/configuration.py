@@ -89,7 +89,7 @@ class ConfigurationManager:
             test_data_path=config.test_data_path,
             train_data_path= config.train_data_path,
             model_path= config.model_path,
-            all_params= fcst_params,
+            fcst_params= fcst_params,
             all_inventory_params=inventory_params,
             metric_file_name= config.metric_file_name,
             target_column= schema.name,

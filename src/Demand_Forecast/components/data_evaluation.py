@@ -49,7 +49,8 @@ class ModelEvaluation:
             scores = {"rmse": rmse, "mae": mae, "r2": r2}
             save_json(path = Path(self.config.metric_file_name), data=scores)
 
-            mlflow.log_params(self.config.all_params)
+            mlflow.log_params(self.config.fcst_params)
+            mlflow.log_params(self.config.all_inventory_params)
             mlflow.log_metric("rmse", rmse)
             mlflow.log_metric("r2", r2)
             mlflow.log_metric("mae", mae)
