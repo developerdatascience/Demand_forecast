@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/harendrakumar/Documents/Demand_forecast/mlruns/0/a764dc2203584253b43d28b999c1da7a/artifacts
+end_time: 1697886851531
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a764dc2203584253b43d28b999c1da7a
+run_name: enchanting-lark-821
+run_uuid: a764dc2203584253b43d28b999c1da7a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697886850242
+status: 3
+tags: []
+user_id: harendrakumar
