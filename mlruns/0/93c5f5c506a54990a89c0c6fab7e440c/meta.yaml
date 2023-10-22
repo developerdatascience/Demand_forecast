@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/harendrakumar/Documents/Demand_forecast/mlruns/0/93c5f5c506a54990a89c0c6fab7e440c/artifacts
+end_time: 1697890151837
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 93c5f5c506a54990a89c0c6fab7e440c
+run_name: debonair-bee-978
+run_uuid: 93c5f5c506a54990a89c0c6fab7e440c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697890150559
+status: 3
+tags: []
+user_id: harendrakumar
